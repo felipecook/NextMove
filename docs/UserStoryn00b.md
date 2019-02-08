@@ -1,0 +1,5 @@
+The n00b:: The n00b player is unsure of the complexities of chess, this app will enable this users to see different scenarios to better their chess game. While this may not directly improve their ability to play chess, it will improve their ability to logically think about the different pieces and their functions. 
+
+The story in terms of interaction with the application is similar to the story of the Avid Chess Player in terms of how the n00b will open the application and enter their personal identifying information (name) and then begin playing whichever of the three challenges they would like to start. 
+
+For the n00b the high score feature (which tells the customer how fast they solved the problem) will be essential to them bettering their understanding of the game because a faster time means they better recognize the functions of certain chess pieces. 
