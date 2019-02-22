@@ -74,24 +74,22 @@ public class MainActivity extends AppCompatActivity
     return super.onOptionsItemSelected(item);
   }
 
-  @SuppressWarnings("StatementWithEmptyBody")
   @Override
   public boolean onNavigationItemSelected(MenuItem item) {
-    // Handle navigation view item clicks here.
-    int id = item.getItemId();
 
-    if (id == R.id.n_queens) {
 
-    } else if (id == R.id.knights_tour) {
+    switch (item.getItemId()) {
+      case R.id.n_queens:
+        // TODO jump to n_queens
+        break;
 
-    } else if (id == R.id.nav_slideshow) {
+      case R.id.knights_tour:
+        // TODO jump to knights_tour
+        break;
 
-    } else if (id == R.id.nav_manage) {
-
-    } else if (id == R.id.nav_share) {
-
-    } else if (id == R.id.nav_send) {
-
+      case R.id.high_score:
+        // TODO jump to high score
+        break;
     }
 
     DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
