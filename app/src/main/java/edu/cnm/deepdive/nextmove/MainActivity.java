@@ -3,6 +3,8 @@ package edu.cnm.deepdive.nextmove;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -80,11 +82,12 @@ public class MainActivity extends AppCompatActivity
 
     switch (item.getItemId()) {
       case R.id.n_queens:
-        // TODO jump to n_queens
+        loadFragment(new NQueens(), R.id.fragment_container, "nQueens", null);
+
         break;
 
       case R.id.knights_tour:
-        // TODO jump to knights_tour
+        loadFragment(new KnightsTour(), R.id.fragment_container, "knightsTour", null);
         break;
 
       case R.id.high_score:
@@ -95,5 +98,15 @@ public class MainActivity extends AppCompatActivity
     DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
     drawer.closeDrawer(GravityCompat.START);
     return true;
+  }
+
+  public void loadFragment(Fragment fragment, int container, String tag, Bundle args) {
+    FragmentManager manager = getSupportFragmentManager();
+    if (args != null) {
+      fragment.setArguments(args);
+    }
+    manager.beginTransaction()
+        .add(container, fragment, tag)
+        .commit();
   }
 }
