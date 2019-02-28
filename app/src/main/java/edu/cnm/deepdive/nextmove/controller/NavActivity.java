@@ -1,11 +1,8 @@
-package edu.cnm.deepdive.nextmove;
+package edu.cnm.deepdive.nextmove.controller;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -14,8 +11,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import edu.cnm.deepdive.nextmove.R;
+import edu.cnm.deepdive.nextmove.controller.HighScoreFragment;
+import edu.cnm.deepdive.nextmove.controller.KnightsTourFragment;
+import edu.cnm.deepdive.nextmove.controller.NQueensFragment;
 
-public class MainActivity extends AppCompatActivity
+public class NavActivity extends AppCompatActivity
     implements NavigationView.OnNavigationItemSelectedListener {
 
   @Override
@@ -73,16 +74,16 @@ public class MainActivity extends AppCompatActivity
 
     switch (item.getItemId()) {
       case R.id.n_queens:
-        loadFragment(new NQueens(), R.id.fragment_container, "nQueens", null);
+        loadFragment(new NQueensFragment(), R.id.fragment_container, "nQueens", null);
 
         break;
 
       case R.id.knights_tour:
-        loadFragment(new KnightsTour(), R.id.fragment_container, "knightsTour", null);
+        loadFragment(new KnightsTourFragment(), R.id.fragment_container, "knightsTour", null);
         break;
 
       case R.id.high_score:
-        loadFragment(new HighScore(), R.id.high_score, "highScore", null);
+        loadFragment(new HighScoreFragment(), R.id.high_score, "highScore", null);
         break;
     }
 
@@ -97,7 +98,7 @@ public class MainActivity extends AppCompatActivity
       fragment.setArguments(args);
     } 
     manager.beginTransaction()
-        .add(container, fragment, tag)
+        .replace(container, fragment, tag)
         .commit();
   }
 }
