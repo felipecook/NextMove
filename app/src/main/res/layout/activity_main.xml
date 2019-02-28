@@ -23,10 +23,5 @@
     app:headerLayout="@layout/nav_header_main"
     app:menu="@menu/activity_main_drawer"/>
 
-  <TextView
-    android:id="@+id/textView2"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:text="@string/next_move_welcome_screen"/>
 
 </android.support.v4.widget.DrawerLayout>

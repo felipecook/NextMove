@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity
         break;
 
       case R.id.high_score:
-        // TODO jump to high score
+        loadFragment(new HighScore(), R.id.high_score, "highScore", null);
         break;
     }
 
@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity
     FragmentManager manager = getSupportFragmentManager();
     if (args != null) {
       fragment.setArguments(args);
-    }
+    } 
     manager.beginTransaction()
         .add(container, fragment, tag)
         .commit();
