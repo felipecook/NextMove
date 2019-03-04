@@ -83,7 +83,7 @@ public class NavActivity extends AppCompatActivity
         break;
 
       case R.id.high_score:
-        loadFragment(new HighScoreFragment(), R.id.high_score, "highScore", null);
+        loadFragment(new HighScoreFragment(), R.id.fragment_container, "highScore", null);
         break;
     }
 
