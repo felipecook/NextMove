@@ -1,0 +1,179 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "700b546f001c2b791ed7fa19efd763e6",
+    "entities": [
+      {
+        "tableName": "PuzzleType",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`puzzle_type_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT, `fragment_class` TEXT, `value_multiplier` INTEGER NOT NULL, `time_spent` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "puzzle_type_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "fragmentClass",
+            "columnName": "fragment_class",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "valueMultiplier",
+            "columnName": "value_multiplier",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "timeSpent",
+            "columnName": "time_spent",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "puzzle_type_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "Score",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`score_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `time_starts` INTEGER NOT NULL, `score_time` INTEGER NOT NULL, `value` INTEGER NOT NULL, `user_id` INTEGER NOT NULL, `puzzle_type_id` INTEGER NOT NULL, FOREIGN KEY(`user_id`) REFERENCES `User`(`user_id`) ON UPDATE NO ACTION ON DELETE CASCADE , FOREIGN KEY(`puzzle_type_id`) REFERENCES `PuzzleType`(`puzzle_type_id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "score_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "timeStarts",
+            "columnName": "time_starts",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "scoreTime",
+            "columnName": "score_time",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "value",
+            "columnName": "value",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "userId",
+            "columnName": "user_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "puzzleTypeId",
+            "columnName": "puzzle_type_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "score_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_Score_user_id",
+            "unique": false,
+            "columnNames": [
+              "user_id"
+            ],
+            "createSql": "CREATE  INDEX `index_Score_user_id` ON `${TABLE_NAME}` (`user_id`)"
+          },
+          {
+            "name": "index_Score_puzzle_type_id",
+            "unique": false,
+            "columnNames": [
+              "puzzle_type_id"
+            ],
+            "createSql": "CREATE  INDEX `index_Score_puzzle_type_id` ON `${TABLE_NAME}` (`puzzle_type_id`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "User",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "user_id"
+            ],
+            "referencedColumns": [
+              "user_id"
+            ]
+          },
+          {
+            "table": "PuzzleType",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "puzzle_type_id"
+            ],
+            "referencedColumns": [
+              "puzzle_type_id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "User",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`user_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `first_name` TEXT, `last_name` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "user_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "firstName",
+            "columnName": "first_name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "lastName",
+            "columnName": "last_name",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "user_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"700b546f001c2b791ed7fa19efd763e6\")"
+    ]
+  }
+}

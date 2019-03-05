@@ -11,9 +11,16 @@ public class PuzzleType {
   @PrimaryKey(autoGenerate = true)
   private long id;
 
+  @ColumnInfo(name = "name")
   private String name;
+
+  @ColumnInfo(name = "fragment_class")
   private String fragmentClass;
+
+  @ColumnInfo(name = "value_multiplier")
   private int valueMultiplier;
+
+  @ColumnInfo(name = "time_spent")
   private int timeSpent;
 
   public long getId() {

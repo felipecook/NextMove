@@ -11,7 +11,10 @@ public class User {
     @PrimaryKey(autoGenerate = true)
     private long id;
 
+    @ColumnInfo(name = "first_name")
     private String firstName;
+
+    @ColumnInfo(name = "last_name")
     private String lastName;
 
     public long getId() {

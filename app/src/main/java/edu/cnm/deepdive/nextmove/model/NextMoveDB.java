@@ -12,13 +12,12 @@ import edu.cnm.deepdive.nextmove.model.dao.PuzzleTypeDao;
 import edu.cnm.deepdive.nextmove.model.dao.ScoreTableDao;
 import edu.cnm.deepdive.nextmove.model.dao.UserDao;
 import edu.cnm.deepdive.nextmove.model.entity.PuzzleType;
-import edu.cnm.deepdive.nextmove.model.entity.ScoreTable;
+import edu.cnm.deepdive.nextmove.model.entity.Score;
 import edu.cnm.deepdive.nextmove.model.entity.User;
 import java.util.Calendar;
-import java.util.Date;
 
 @Database(
-    entities = {PuzzleType.class, ScoreTable.class, User.class},
+    entities = {PuzzleType.class, Score.class, User.class},
     version = 1,
     exportSchema = true
 )
