@@ -2,21 +2,17 @@ package edu.cnm.deepdive.nextmove.model.entity;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
-import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
 
-@Entity(
-    foreignKeys = @ForeignKey(
-        entity = ScoreTable.class,
-        parentColumns = "user_id", childColumns = "user_id",
-        onDelete = ForeignKey.CASCADE
-    )
-)
+@Entity()
 public class User {
 
     @ColumnInfo(name = "user_id")
     @PrimaryKey(autoGenerate = true)
     private long id;
+
+    private String firstName;
+    private String lastName;
 
     public long getId() {
         return id;
@@ -26,25 +22,20 @@ public class User {
         this.id = id;
     }
 
-
-    private String first_name;
-    private String last_name;
-
-
-    public String getFirst_name() {
-        return first_name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFirst_name(String first_name) {
-        this.first_name = first_name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getLast_name() {
-        return last_name;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLast_name(String last_name) {
-        this.last_name = last_name;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
 }
