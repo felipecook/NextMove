@@ -3,6 +3,6 @@ package edu.cnm.deepdive.nextmove.model.dao;
 import android.arch.persistence.room.Dao;
 
 @Dao
-public interface Score_TableDao {
+public interface ScoreTableDao {
 
 }
