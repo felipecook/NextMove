@@ -1,10 +1,12 @@
 package edu.cnm.deepdive.nextmove.model;
 
 import android.arch.persistence.room.Database;
+import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
 import android.arch.persistence.room.TypeConverter;
 import android.arch.persistence.room.TypeConverters;
 import android.support.annotation.Nullable;
+import edu.cnm.deepdive.nextmove.NextMoveApplication;
 import edu.cnm.deepdive.nextmove.model.NextMoveDB.Converters;
 import edu.cnm.deepdive.nextmove.model.dao.PuzzleTypeDao;
 import edu.cnm.deepdive.nextmove.model.dao.ScoreTableDao;
@@ -26,7 +28,7 @@ public abstract class NextMoveDB extends RoomDatabase {
   private static final String DB_NAME = "nextmove_db";
 
   public synchronized static NextMoveDB getInstance() {
-    return InstanceHolder.instance;
+    return InstanceHolder.INSTANCE;
   }
 
   public abstract PuzzleTypeDao getPuzzleTypeDao();
@@ -34,6 +36,14 @@ public abstract class NextMoveDB extends RoomDatabase {
   public abstract ScoreTableDao getScoreTableDao();
 
   public abstract UserDao getUserDao();
+
+  private static class InstanceHolder {
+
+    private static final NextMoveDB INSTANCE = Room.databaseBuilder(
+        NextMoveApplication.getInstance().getApplicationContext(), NextMoveDB.class, DB_NAME)
+        .build();
+
+  }
 
   public static class Converters {
 

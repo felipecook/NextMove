@@ -1,6 +1,8 @@
 package edu.cnm.deepdive.nextmove;
 
 import android.app.Application;
+import com.facebook.stetho.Stetho;
+
 
 public class NextMoveApplication extends Application {
 
@@ -10,6 +12,7 @@ public class NextMoveApplication extends Application {
   public void onCreate() {
     super.onCreate();
     instance = this;
+    Stetho.initializeWithDefaults(this);
   }
 
   public static NextMoveApplication getInstance() {
