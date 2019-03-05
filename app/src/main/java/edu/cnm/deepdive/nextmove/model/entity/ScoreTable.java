@@ -7,11 +7,18 @@ import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
 
 @Entity(
-    foreignKeys = @ForeignKey(
-        entity = User.class,
-        parentColumns = "score_id", childColumns = "score_id",
-        onDelete = ForeignKey.CASCADE
-    )
+    foreignKeys = {
+        @ForeignKey(
+            entity = User.class,
+            parentColumns = "user_id", childColumns = "user_id",
+            onDelete = ForeignKey.CASCADE
+        ),
+        @ForeignKey(
+            entity = PuzzleType.class,
+            parentColumns = "puzzle_type_id", childColumns = "puzzle_type_id",
+            onDelete = ForeignKey.CASCADE
+        )
+    }
 )
 public class ScoreTable {
 
@@ -19,24 +26,54 @@ public class ScoreTable {
     @PrimaryKey(autoGenerate = true)
     private long id;
 
-    private int time_starts;
-    private int score_time;
+    private int timeStarts;
+    private int scoreTime;
     private int value;
 
-    public int getTime_starts() {
-        return time_starts;
+    @ColumnInfo(name = "user_id", index = true)
+    private int userId;
+
+    @ColumnInfo(name = "puzzle_type_id", index = true)
+    private int puzzleTypeId;
+
+    public long getId() {
+        return id;
     }
 
-    public void setTime_starts(int time_starts) {
-        this.time_starts = time_starts;
+    public void setId(long id) {
+        this.id = id;
     }
 
-    public int getScore_time() {
-        return score_time;
+    public int getUserId() {
+        return userId;
     }
 
-    public void setScore_time(int score_time) {
-        this.score_time = score_time;
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
+    public int getPuzzleTypeId() {
+        return puzzleTypeId;
+    }
+
+    public void setPuzzleTypeId(int puzzleTypeId) {
+        this.puzzleTypeId = puzzleTypeId;
+    }
+
+    public int getTimeStarts() {
+        return timeStarts;
+    }
+
+    public void setTimeStarts(int timeStarts) {
+        this.timeStarts = timeStarts;
+    }
+
+    public int getScoreTime() {
+        return scoreTime;
+    }
+
+    public void setScoreTime(int scoreTime) {
+        this.scoreTime = scoreTime;
     }
 
     public int getValue() {

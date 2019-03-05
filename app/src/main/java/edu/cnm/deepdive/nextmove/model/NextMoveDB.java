@@ -64,17 +64,17 @@ public abstract class NextMoveDB extends RoomDatabase {
       return (calendar != null) ? calendar.getTimeInMillis() : null;
     }
 
-    @Nullable
-    @TypeConverter
-    public static Date dateFromInt(@Nullable Integer days) {
-      return (days != null) ? Date.fromEpochDays(days) : null;
-    }
+//    @Nullable
+//    @TypeConverter
+//    public static Date dateFromInt(@Nullable Integer days) {
+//      return (days != null) ? Date.fromEpochDays(days) : null;
+//    }
 
-    @Nullable
-    @TypeConverter
-    public static Integer intFromDate(@Nullable Date date) {
-      return (date != null) ? date.toEpochDays() : null;
-    }
+//    @Nullable
+//    @TypeConverter
+//    public static Integer intFromDate(@Nullable Date date) {
+//      return (date != null) ? date.toEpochDays() : null;
+//    }
 
   }
 

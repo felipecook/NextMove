@@ -9,46 +9,54 @@ import android.arch.persistence.room.PrimaryKey;
 @Entity()
 public class PuzzleType {
 
-    @ColumnInfo(name = "puzzle_type_id")
-    @PrimaryKey(autoGenerate = true)
-    private long id;
+  @ColumnInfo(name = "puzzle_type_id")
+  @PrimaryKey(autoGenerate = true)
+  private long id;
 
-    private String name;
-    private String fragment_class;
-    private int value_multiplier;
-    private int time_spent;
+  private String name;
+  private String fragment_class;
+  private int value_multiplier;
+  private int time_spent;
 
-    public String getName() {
-        return name;
-    }
+  public long getId() {
+    return id;
+  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  public void setId(long id) {
+    this.id = id;
+  }
 
-    public String getFragment_class() {
-        return fragment_class;
-    }
+  public String getName() {
+    return name;
+  }
 
-    public void setFragment_class(String fragment_class) {
-        this.fragment_class = fragment_class;
-    }
+  public void setName(String name) {
+    this.name = name;
+  }
 
-    public int getValue_multiplier() {
-        return value_multiplier;
-    }
+  public String getFragment_class() {
+    return fragment_class;
+  }
 
-    public void setValue_multiplier(int value_multiplier) {
-        this.value_multiplier = value_multiplier;
-    }
+  public void setFragment_class(String fragment_class) {
+    this.fragment_class = fragment_class;
+  }
 
-    public int getTime_spent() {
-        return time_spent;
-    }
+  public int getValue_multiplier() {
+    return value_multiplier;
+  }
 
-    public void setTime_spent(int time_spent) {
-        this.time_spent = time_spent;
-    }
+  public void setValue_multiplier(int value_multiplier) {
+    this.value_multiplier = value_multiplier;
+  }
+
+  public int getTime_spent() {
+    return time_spent;
+  }
+
+  public void setTime_spent(int time_spent) {
+    this.time_spent = time_spent;
+  }
 
 
 }
