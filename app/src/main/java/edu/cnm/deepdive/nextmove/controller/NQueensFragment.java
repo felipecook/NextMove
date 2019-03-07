@@ -9,13 +9,12 @@ import android.view.ViewGroup;
 import edu.cnm.deepdive.nextmove.R;
 
 
-public class NQueensFragment extends Fragment {
+public class NQueensFragment extends InfoFragment {
 
-
-  public NQueensFragment() {
-    // Required empty public constructor
+  @Override
+  public String getInfo() {
+    return getActivity().getString(R.string.fragment_information);
   }
-
 
   @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container,
