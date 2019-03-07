@@ -12,7 +12,7 @@ public class NextMoveApplication extends Application {
   public void onCreate() {
     super.onCreate();
     instance = this;
-    Stetho.initializeWithDefaults(this);
+    //Stetho.initializeWithDefaults(this);
   }
 
   public static NextMoveApplication getInstance() {
