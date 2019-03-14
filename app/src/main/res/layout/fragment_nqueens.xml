@@ -1,15 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
   android:background="#FFFFFF"
   tools:context=".controller.NQueensFragment">
 
-  <!-- TODO: Update blank fragment layout -->
-  <TextView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:text="@string/n_queens_fragment"/>
+<!--   have image views for each square on the board, or a custom
+   view that allows you to draw the pieces
+   Grid layout to define where each image view goes
+   have constraint layout with grid layout inside-->
 
-</FrameLayout>
+  <GridLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+      android:layout_height="match_parent"
+      android:layout_width="match_parent"
+      android:src="@drawable/chess_board_image"
+      android:scaleType="centerCrop"
+
+      />
+
+
+
+  </GridLayout>
+
+
+
+</android.support.constraint.ConstraintLayout>

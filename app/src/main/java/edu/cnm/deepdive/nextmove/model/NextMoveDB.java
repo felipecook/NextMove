@@ -22,6 +22,11 @@ import java.util.Calendar;
     exportSchema = true
 )
 @TypeConverters(Converters.class)
+
+/*
+This class is used to create converters for the information room will be retrieving, also creates an instance
+holder for the application to get the necessary context for displaying information.
+ */
 public abstract class NextMoveDB extends RoomDatabase {
 
   private static final String DB_NAME = "nextmove_db";

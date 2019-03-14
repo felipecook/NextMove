@@ -15,7 +15,8 @@ import android.view.ViewGroup;
 
 import edu.cnm.deepdive.nextmove.R;
 
-
+// This fragment functions as the code for the info button that is located in options.xml
+// TODO Make the information change depending on which fragment i am located in.
 public class DialogueFragment extends DialogFragment {
 
 

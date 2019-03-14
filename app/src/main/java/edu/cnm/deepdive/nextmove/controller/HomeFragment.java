@@ -9,6 +9,9 @@ import android.view.ViewGroup;
 
 import edu.cnm.deepdive.nextmove.R;
 
+// This home fragment is for the home screen. The home screen fragment occurs after the login
+// activity is finished.
+// TODO Add background, homescreen info and website link on homescreen
 
 public class HomeFragment extends Fragment {
 

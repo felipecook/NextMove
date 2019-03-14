@@ -8,7 +8,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import edu.cnm.deepdive.nextmove.R;
 
-
+/*
+The NQueens Frag will eventually display the NQueens chess problem. This will also include a timer
+so that the user will know how long they have taken, and it will display a view so the user knows how
+many queens they have placed.
+ */
 public class NQueensFragment extends InfoFragment {
 
   @Override

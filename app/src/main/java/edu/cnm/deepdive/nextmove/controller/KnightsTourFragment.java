@@ -12,6 +12,9 @@ import edu.cnm.deepdive.nextmove.R;
 /**
  * A simple {@link Fragment} subclass.
  */
+
+// This class will inflate the knights tour xml, and chess board for game.
+// TODO changing infofrag dialogue, displaying knights tour game
 public class KnightsTourFragment extends InfoFragment {
 
   @Override

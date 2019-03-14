@@ -1,6 +1,8 @@
 package edu.cnm.deepdive.nextmove.controller;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -15,7 +17,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import edu.cnm.deepdive.nextmove.R;
+import edu.cnm.deepdive.nextmove.service.GoogleSignInService;
+
+/*
+This class is the main activity that all my fragments use as their context. This class loads my fragments
+and also my nav drawer view. Allows the user to sign out. This also allows its users to navigate
+between fragments.
+ */
+
 
 public class NavActivity extends AppCompatActivity
     implements NavigationView.OnNavigationItemSelectedListener {
@@ -37,7 +49,7 @@ public class NavActivity extends AppCompatActivity
     Fragment fragmentHome = new HomeFragment();
     FragmentManager manager = getSupportFragmentManager();
     FragmentTransaction transaction = manager.beginTransaction();
-    transaction.add(R.id.fragment_container, fragmentHome ,"home" );
+    transaction.add(R.id.fragment_container, fragmentHome, "home");
     transaction.addToBackStack(null);
     transaction.commit();
   }
@@ -63,28 +75,29 @@ public class NavActivity extends AppCompatActivity
 
   @Override
   public boolean onOptionsItemSelected(MenuItem item) {
-    // Handle action bar item clicks here. The action bar will
-    // automatically handle clicks on the Home/Up button, so long
-    // as you specify a parent activity in AndroidManifest.xml.
 
     DialogFragment dialogFragment = new DialogueFragment();
     FragmentManager manager = getSupportFragmentManager();
-
     int id = item.getItemId();
+    boolean handled = true;
 
-    //noinspection SimplifiableIfStatement
-    if (id == R.id.action_settings) {
-      return true;
-    } else if (id == R.id.info) {
-      dialogFragment.show(manager, "knightstour");
-      return true;
+    switch (item.getItemId()) {
+      case R.id.action_settings:
+        break;
+      case R.id.sign_out:
+        signOut();
+        break;
+      case R.id.info:
+        dialogFragment.show(manager, "knights tour");
+        break;
+      default:
+        handled = super.onOptionsItemSelected(item);
     }
-    return super.onOptionsItemSelected(item);
+    return handled;
   }
 
   @Override
   public boolean onNavigationItemSelected(MenuItem item) {
-
 
     switch (item.getItemId()) {
       case R.id.fragment_main:
@@ -110,9 +123,23 @@ public class NavActivity extends AppCompatActivity
     FragmentManager manager = getSupportFragmentManager();
     if (args != null) {
       fragment.setArguments(args);
-    } 
+    }
     manager.beginTransaction()
         .replace(container, fragment, tag)
         .commit();
+  }
+
+  private void signOut() {
+    GoogleSignInService.getInstance().getClient()
+        .signOut()
+        .addOnCompleteListener(this, new OnCompleteListener<Void>() {
+          @Override
+          public void onComplete(@NonNull Task<Void> task) {
+            GoogleSignInService.getInstance().setAccount(null);
+            Intent intent = new Intent(NavActivity.this, LoginActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+            NavActivity.this.startActivity(intent);
+          }
+        });
   }
 }

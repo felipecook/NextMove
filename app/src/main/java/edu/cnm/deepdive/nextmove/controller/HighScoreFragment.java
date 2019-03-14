@@ -8,6 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import edu.cnm.deepdive.nextmove.R;
 
+// This Fragment functions as the code for the High Score Fragment. Currently it only inflates the
+// fragment high score layout. Eventually this code will contain the formula to determine how the
+// high score fragment interacts with the high score database
 
 public class HighScoreFragment extends InfoFragment {
 

@@ -3,7 +3,9 @@ package edu.cnm.deepdive.nextmove;
 import android.app.Application;
 import com.facebook.stetho.Stetho;
 
-
+/*
+This class creates the instance for the application.
+ */
 public class NextMoveApplication extends Application {
 
   private static NextMoveApplication instance = null;
