@@ -55,7 +55,7 @@ High score information would be the information shared if it did have connection
 
 # Wireframe
 
-![Wireframe](WireFrame_Next_Move)
+![Wireframe](WireFrame_Next_Move.pdf)
 
 
 ### If this app will consume external data, investigate and list possible internet-based sources for this data.
