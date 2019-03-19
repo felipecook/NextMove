@@ -53,4 +53,9 @@ Absolutely, in fact, this application, in it's current stage, does not require a
 
 High score information would be the information shared if it did have connection. You would be able to connect to other friends and see what their high scores are in comparison to yours. 
 
+# Wireframe
+
+![Wireframe](WireFrame_Next_Move)
+
+
 ### If this app will consume external data, investigate and list possible internet-based sources for this data.
