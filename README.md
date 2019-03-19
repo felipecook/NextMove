@@ -4,6 +4,29 @@
 
 This application will be called Next Move.
 
+### Why did you choose to develop this particular app, and why is this (at least potentially) a useful or interesting app?
+
+This app was developed because of my love for mathematics and chess. I wanted to develop an application that would use both of these elements in it, and would also be enjoyable to try out for someone else who may have similar interests. This app will be interesting to users who enjoy playing chess or who enjoy having a math challenge and who have not played my game before. 
+
+### Required Android API version, and Emulator Used:
+
+I have set the required API level to be at 21, which enables features that allowed the development of the application to be streamlined. I used the Android Nexus 5X API 24 as the emulator. I am unaware at the current moment of any other hardware/software restrictions. 
+
+### External Services Used:
+
+The external services currently implemented by my application are Google_Sign_In. 
+
+### Numbered List for Application Improvements:
+
+1. Finishing the GUI for both the Knights Tale and N-Queens problem.
+2. Allowing the user's profile to be saved into the nav drawer and displayed (photo, etc.)
+3. Creating a 
+
+
+### What's the current state of the app?
+
+This application is currently buildable and functional but it is missing its main two features which are the two game modes, Knights Tour and the N-Queens Problem. The application does have a working login page which utilizes Google Sign-In.
+
 ### What's the basic functionality of the app?
 
 This application will be made up of three different chess problems. The user will attempt to complete each problem, upon successful completion of a problem the user will receive a high score. Upon subsequent completions the user will be able to see what their previous high score was and if they beat it. The basic high score will be based on the time the user takes to complete the selected problem. The user will also have the ability to customize the high score so that instead of just being based on time of completion, it will also be based, in regards to the Knight's Tour on the number of moves they were able to make with the Knight, or in the case of the nQueens problem how many queens they were able to place on the chess board. 
