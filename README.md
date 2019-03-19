@@ -20,7 +20,12 @@ The external services currently implemented by my application are Google_Sign_In
 
 1. Finishing the GUI for both the Knights Tale and N-Queens problem.
 2. Allowing the user's profile to be saved into the nav drawer and displayed (photo, etc.)
-3. Creating a 
+3. Creating a more complete high_score view
+
+### Functional Stretch Goals:
+
+1. Updating the number of games that are available on this application would improve user experience and also increase the amount of time that a user might spend on an application. 
+2. Allowing users to share information between friends, for example, if you are a user with 
 
 
 ### What's the current state of the app?
@@ -52,10 +57,6 @@ Absolutely, in fact, this application, in it's current stage, does not require a
 ### What sort of data would this app use or share if it had a connection to the internet?
 
 High score information would be the information shared if it did have connection. You would be able to connect to other friends and see what their high scores are in comparison to yours. 
-
-# Wireframe
-
-![Wireframe](WireFrame_Next_Move.pdf)
 
 
 ### If this app will consume external data, investigate and list possible internet-based sources for this data.
