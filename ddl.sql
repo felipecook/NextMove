@@ -24,3 +24,9 @@ CREATE INDEX `index_Score_user_id` ON `Score` (
 CREATE  INDEX `index_Score_puzzle_type_id` ON `Score` (
 	`puzzle_type_id`
 );
+
+CREATE TABLE IF NOT EXISTS `${User}` (
+	`user_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 
+	`first_name` TEXT, 
+	`last_name` TEXT
+);
