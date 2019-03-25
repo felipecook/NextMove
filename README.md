@@ -16,6 +16,8 @@ I have set the required API level to be at 21, which enables features that allow
 
 The external services currently implemented by my application are Google_Sign_In. 
 
+For more details on current classes and methods, see [Javadoc](docs/api/). 
+
 ### Numbered List for Application Improvements:
 
 1. Finishing the GUI for both the Knights Tale and N-Queens problem.

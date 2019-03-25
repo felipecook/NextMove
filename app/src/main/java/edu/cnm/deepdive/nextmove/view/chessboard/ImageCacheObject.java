@@ -3,7 +3,7 @@ package edu.cnm.deepdive.nextmove.view.chessboard;
 public class ImageCacheObject {
 
 
-  public int _piece, color, _fieldColor;
+  public int piece, color, _fieldColor;
   public boolean _bPiece, _selectedPos, _selected;
   public String coord;
 

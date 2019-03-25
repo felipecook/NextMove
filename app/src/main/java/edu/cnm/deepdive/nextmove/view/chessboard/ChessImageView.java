@@ -133,7 +133,7 @@ public class ChessImageView extends View {
 
     if (ico._bPiece) {
 
-      bmp = _arrPieceBitmaps[ico.color][ico._piece];
+      bmp = _arrPieceBitmaps[ico.color][ico.piece];
       _sActivity = (start.get_ssActivity() == null) ? "" : start.get_ssActivity();
 
       // todo if it's fine then will put back && statements
