@@ -1,5 +1,7 @@
 # NEXTMOVEscratchpad
 
+[DDL](docs/ddl.md)
+
 ### What will your app be called?
 
 This application will be called Next Move.
