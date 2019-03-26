@@ -7,19 +7,4 @@
   android:background="#FFFFFF"
   tools:context=".controller.NQueensFragment">
 
-  <!--   have image views for each square on the board, or a custom
-     view that allows you to draw the pieces
-     Grid layout to define where each image view goes
-     have constraint layout with grid layout inside-->
-
-
-  <ImageView
-    android:layout_height="match_parent"
-    android:layout_width="fill_parent"
-    android:src="@drawable/chess_board_image"
-    android:scaleType="centerCrop"
-
-    />
-
-
 </android.support.constraint.ConstraintLayout>

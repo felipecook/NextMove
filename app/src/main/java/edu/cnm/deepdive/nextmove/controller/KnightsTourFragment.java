@@ -15,7 +15,7 @@ import edu.cnm.deepdive.nextmove.R;
 
 // This class will inflate the knights tour xml, and chess board for game.
 // TODO changing infofrag dialogue, displaying knights tour game
-public class KnightsTourFragment extends InfoFragment {
+public class KnightsTourFragment extends ChessFragment {
 
   @Override
   public String getInfo() {
@@ -26,7 +26,7 @@ public class KnightsTourFragment extends InfoFragment {
   public View onCreateView(LayoutInflater inflater, ViewGroup container,
       Bundle savedInstanceState) {
     // Inflate the layout for this fragment
-    return inflater.inflate(R.layout.fragment_knights_tour, container, false);
+    return super.onCreateView(inflater, container, savedInstanceState);
   }
 
 }

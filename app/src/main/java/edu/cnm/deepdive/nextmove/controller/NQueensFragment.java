@@ -13,7 +13,7 @@ The NQueens Frag will eventually display the NQueens chess problem. This will al
 so that the user will know how long they have taken, and it will display a view so the user knows how
 many queens they have placed.
  */
-public class NQueensFragment extends InfoFragment {
+public class NQueensFragment extends ChessFragment {
 
   @Override
   public String getInfo() {
@@ -24,7 +24,7 @@ public class NQueensFragment extends InfoFragment {
   public View onCreateView(LayoutInflater inflater, ViewGroup container,
       Bundle savedInstanceState) {
     // Inflate the layout for this fragment
-    return inflater.inflate(R.layout.fragment_nqueens, container, false);
+    return super.onCreateView(inflater, container, savedInstanceState);
   }
 
 }
