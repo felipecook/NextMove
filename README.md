@@ -68,7 +68,11 @@ For the n00b the high score feature (which tells the customer how fast they solv
 
 ### Data Model
 
+[WireFrame](docs/WireFrame_Next_Move.pdf)
+
 [DDL](docs/ddl.md)
+
+
 
 ### Could this app be useful on its own, with no connection to the internet?
 
