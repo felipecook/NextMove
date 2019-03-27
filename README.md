@@ -1,6 +1,15 @@
 # NEXTMOVEscratchpad
 
-[DDL](docs/ddl.md)
+## Purpose
+
+This applications provides a convenient method for users to practice the two mathematical problems: the Knights Tour and the N-Queens problem.
+
+## Current State
+
+This application is still in the Alpha phase of testing and is not currently playable by users. 
+* It is not able to play the current two game modes but it does display the boards.
+* It allows users to login using their google accounts to verify.
+* It gives a description of both games and their intended use.
 
 ### What will your app be called?
 
@@ -40,6 +49,9 @@ This application is currently buildable and functional but it is missing its mai
 
 This application will be made up of three different chess problems. The user will attempt to complete each problem, upon successful completion of a problem the user will receive a high score. Upon subsequent completions the user will be able to see what their previous high score was and if they beat it. The basic high score will be based on the time the user takes to complete the selected problem. The user will also have the ability to customize the high score so that instead of just being based on time of completion, it will also be based, in regards to the Knight's Tour on the number of moves they were able to make with the Knight, or in the case of the nQueens problem how many queens they were able to place on the chess board. 
 
+
+## Design Documentation 
+
 ### Who would find this app useful or fun, and when would they use it?
 
 **User Story 1**
@@ -53,6 +65,10 @@ The n00b:: The n00b player is unsure of the complexities of chess, this app will
 The story in terms of interaction with the application is similar to the story of the Avid Chess Player in terms of how the n00b will open the application and enter their personal identifying information (name) and then begin playing whichever of the three challenges they would like to start. 
 
 For the n00b the high score feature (which tells the customer how fast they solved the problem) will be essential to them bettering their understanding of the game because a faster time means they better recognize the functions of certain chess pieces. 
+
+### Data Model
+
+[DDL](docs/ddl.md)
 
 ### Could this app be useful on its own, with no connection to the internet?
 
