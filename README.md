@@ -1,4 +1,4 @@
-# NEXTMOVEscratchpad
+# NEXTMOVE
 
 ## Purpose
 
