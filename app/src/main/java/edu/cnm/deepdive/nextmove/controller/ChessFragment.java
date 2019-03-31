@@ -10,6 +10,11 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import edu.cnm.deepdive.nextmove.R;
 
+
+/**
+ * Populates a {@link Fragment} with the chess image necessary for the game to be able to be
+ * played.
+ */
 public abstract class ChessFragment extends InfoFragment {
 
   @Nullable
@@ -21,6 +26,11 @@ public abstract class ChessFragment extends InfoFragment {
     return view;
   }
 
+  /**
+   * Creates the board array which is then inflated in the xml document. 
+   * @param view
+   * @return
+   */
   protected ImageView[] constructBoardArray (View view) {
     ImageView[] arrImages = new ImageView[64];
 

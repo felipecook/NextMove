@@ -4,4 +4,4 @@ edu.cnm.deepdive.nextmove.model
 edu.cnm.deepdive.nextmove.model.dao
 edu.cnm.deepdive.nextmove.model.entity
 edu.cnm.deepdive.nextmove.service
-edu.cnm.deepdive.nextmove.view.chessboard
+edu.cnm.deepdive.nextmove.view

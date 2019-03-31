@@ -28,7 +28,10 @@ and also my nav drawer view. Allows the user to sign out. This also allows its u
 between fragments.
  */
 
-
+/**
+ * Primary Controller Class for the NextMove App. This activity configures and responds to clicks in a
+ * {@link edu.cnm.deepdive.nextmove.NextMoveApplication}
+ */
 public class NavActivity extends AppCompatActivity
     implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -128,7 +131,9 @@ public class NavActivity extends AppCompatActivity
         .replace(container, fragment, tag)
         .commit();
   }
-
+/**
+ * This activates the signOut button on the home screen. This will take back the user to the {@link LoginActivity}
+ */
   private void signOut() {
     GoogleSignInService.getInstance().getClient()
         .signOut()

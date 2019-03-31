@@ -12,7 +12,8 @@
   <TableRow
     android:layout_weight="1">
     <ImageView android:layout_height="match_parent"  android:id="@+id/a8"
-      android:background="@android:color/black"/>
+      android:background="@android:color/black"
+      android:onClick="addImage"/>
     <ImageView android:layout_height="match_parent"  android:id="@+id/b8"/>
     <ImageView android:layout_height="match_parent"  android:id="@+id/c8"
       android:background="@android:color/black"/>
