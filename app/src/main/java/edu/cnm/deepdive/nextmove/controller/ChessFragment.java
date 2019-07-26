@@ -27,7 +27,7 @@ public abstract class ChessFragment extends InfoFragment {
   }
 
   /**
-   * Creates the board array which is then inflated in the xml document. 
+   * Creates the board array which is then inflated in the xml document.
    * @param view
    * @return
    */
